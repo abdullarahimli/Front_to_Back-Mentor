@@ -1,0 +1,45 @@
+﻿@model List<Trainer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="container">
+        <h2>Trainers</h2>
+        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+    </div>
+</div><!-- End Breadcrumbs -->
+<!-- ======= Trainers Section ======= -->
+<section id="trainers" class="trainers">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+            @foreach (Trainer trainer in Model)
+            {
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/trainers/@trainer.Image" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>@trainer.Name @trainer.SurName</h4>
+                            <span>@trainer.TrainerPosition.Name</span>
+                            <p>
+                                @trainer.Description
+                            </p>
+                            <div class="social">
+                                <a href="">@Html.Raw(trainer.Twitter)</a>
+                                <a href="">@Html.Raw(trainer.Facebook)</a>
+                                <a href="">@Html.Raw(trainer.Instagram)</a>
+                                <a href="">@Html.Raw(trainer.LinkedIn)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</section><!-- End Trainers Section -->
